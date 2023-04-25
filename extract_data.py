@@ -71,7 +71,12 @@ def preprocess_text(text):
     return ' '.join(meaningful_tokens)
 
 # Process data and store in a text file
+number_of_posts = len(all_posts)
+print(f"Number of posts: {number_of_posts}")
 with open("nba_all_star_posts.txt", "w", encoding="utf-8") as output_file:
     for post in all_posts:
         processed_text = preprocess_text(post.selftext)
-        output_file.write(processed_text + "\n")
+        
+        # Check if processed_text is not empty or contains only whitespace characters
+        if processed_text.strip():
+            output_file.write(processed_text + "\n")
