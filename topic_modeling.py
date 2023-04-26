@@ -23,5 +23,5 @@ def display_topics(model, feature_names, no_top_words):
 
 # Display the top words for each topic
 num_top_words = 20
-feature_names = vectorizer.get_feature_names()
+feature_names = vectorizer.get_feature_names_out()
 display_topics(lda_model, feature_names, num_top_words)
